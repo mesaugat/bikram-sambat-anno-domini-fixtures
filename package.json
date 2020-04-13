@@ -1,0 +1,15 @@
+{
+  "name": "bikram-sambat-anno-domini-fixtures",
+  "description": "Scrape and export of BS to AD conversion dataset from nepcal.com",
+  "version": "1.0.0",
+  "main": "scrape.js",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "start": "node scrape.js"
+  },
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.3",
+    "got": "^10.7.0"
+  }
+}
