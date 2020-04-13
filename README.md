@@ -1,8 +1,8 @@
 # bikram-sambat-anno-domini-fixtures
 
-Fixtures for B.S. to A.D. date conversion.
+**Fixtures for B.S. to A.D. date conversion.**
 
-**Export of [Bikram Sambat](https://en.wikipedia.org/wiki/Vikram_Samvat) and corresponding [Anno Domini](https://en.wikipedia.org/wiki/Anno_Domini) dates have been extracted from [nepcal.com](http://nepcal.com). Full attribution goes to author(s) of [http://nepcal.com].**
+> *Export of [Bikram Sambat](https://en.wikipedia.org/wiki/Vikram_Samvat) and corresponding [Anno Domini](https://en.wikipedia.org/wiki/Anno_Domini) dates have been extracted from [nepcal.com](http://nepcal.com). Full attribution goes to author(s) of [nepcal.com](http://nepcal.com).*
 
 ## Run the Scraper
 
