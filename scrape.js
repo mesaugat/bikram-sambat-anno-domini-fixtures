@@ -45,7 +45,7 @@ function toArabic(num) {
 }
 
 /**
- * Scrape EN and NP dates from nepcal.com.
+ * Scrape and export EN and NP dates from nepcal.com.
  */
 async function scrape() {
   const calendar = [];
