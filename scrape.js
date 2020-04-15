@@ -7,6 +7,7 @@ const NEPCAL_URL = 'http://nepcal.com/index.php';
 const NP_START_YEAR = 1975;
 const NP_END_YEAR = 2100;
 
+const JANUARY = 1;
 const APRIL = 4;
 
 /**
@@ -85,8 +86,9 @@ async function scrape() {
 
       const npMonthDivOnClickAttr = monthDiv.attr('onclick');
       let [, npMonth] = npMonthDivOnClickAttr.match(/m=(\d+)/);
-      npMonth = Number(npMonth);
+      npMonth = Number(npMonth)
 
+      // Increase month if the day starts from one.
       if (enDay === 1) {
         enMonth += 1;
       }
@@ -95,9 +97,20 @@ async function scrape() {
         enMonth = enMonth - 12;
       }
 
+      enMonth = Number(enMonth);
+
       // Year
-      let [enYear] = monthDiv.find('div[class*="mheade"]').text().match(/\d+/);
-      enYear = Number(enYear);
+      // Matches either of "Nov/Dec 1921" or "Dec/Jan 1921/1922".
+      const matches = monthDiv.find('div[class*="mheade"]').text().match(/\d+/g);
+      let [enYear] = matches;
+
+      // A double match means there should be an EN year change.
+      // EN year changes 3~4 months before NP year.
+      if (matches.length === 2 && enMonth === JANUARY) {
+        [, enYear] = matches;
+      }
+
+      enYear = Number(enYear)
 
       const value = {
         npYear,
@@ -117,7 +130,7 @@ async function scrape() {
     }
 
     // Graceful requests to nepcal.com
-    await sleep(1000);
+    await sleep(100);
 
     fs.writeFileSync('export.json', JSON.stringify(calendar, null, 2));
   }
