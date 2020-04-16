@@ -86,7 +86,7 @@ async function scrape() {
 
       const npMonthDivOnClickAttr = monthDiv.attr('onclick');
       let [, npMonth] = npMonthDivOnClickAttr.match(/m=(\d+)/);
-      npMonth = Number(npMonth)
+      npMonth = Number(npMonth);
 
       // Increase month if the day starts from one.
       if (enDay === 1) {
@@ -110,7 +110,7 @@ async function scrape() {
         [, enYear] = matches;
       }
 
-      enYear = Number(enYear)
+      enYear = Number(enYear);
 
       const value = {
         npYear,
