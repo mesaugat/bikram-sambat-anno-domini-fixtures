@@ -6,7 +6,8 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "start": "node scrape.js"
+    "start": "node scrape.js",
+    "validate": "node validate.js"
   },
   "dependencies": {
     "cheerio": "^1.0.0-rc.3",
